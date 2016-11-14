@@ -37,6 +37,7 @@
 [submodule "vim/bundle/camelcasemotion.vim"]
 	path = vim/bundle/camelcasemotion.vim
 	url = git://github.com/vim-scripts/camelcasemotion.git
+	ignore = untracked
 [submodule "vim/bundle/vim-jinja"]
 	path = vim/bundle/vim-jinja
 	url = git://github.com/mitsuhiko/vim-jinja.git
