@@ -1,17 +1,18 @@
 #!/bin/sh
 REPOSITORY=/bak/borg
 
+# --exclude 're:/home/kyro/installs\/(?!druid-0)' \
+
 # Backup all of /home and /var/www except a few
 # excluded directories
-borg create -v --stats -p                       \
-    --compression zlib,9                        \
+sudo -E borg create -v --stats -p                         \
+    --compression zlib,9                          \
     $REPOSITORY::"$(hostname)-$(date +%Y-%m-%d)"  \
     /home                                       \
     /var/www                                    \
     /etc/NetworkManager/system-connections/     \
     --exclude '/home/*/.cache'                  \
     --exclude /home/kyro/builds                 \
-    --exclude /home/kyro/installs               \
     --exclude /home/kyro/workspace              \
     --exclude /home/kyro/Downloads              \
     --exclude /home/kyro/Pictures               \
@@ -42,5 +43,5 @@ borg create -v --stats -p                       \
     --exclude /var/www/.viminfo                 \
     --exclude '*.pyc'
 
-borg prune -v $REPOSITORY --prefix "$(hostname)-" \
+sudo -E borg prune -v $REPOSITORY --prefix "$(hostname)-" \
     --keep-daily=3 --keep-weekly=2 --keep-monthly=2
