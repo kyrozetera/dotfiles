@@ -108,6 +108,7 @@ au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft=='' | setfilet
 "set tags=/var/www/tags
 "let php_sql_query=1
 
+let g:session_autosave = 'no'
 
 "nerdtree
 if has('autocmd')
