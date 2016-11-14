@@ -1,0 +1,60 @@
+#Section "Files"
+#    ModulePath      "/usr/lib/<path to nvidia driver>"
+#    ModulePath      "/usr/lib/xorg/modules"
+#EndSection
+
+Section "Device"
+    Identifier "Device0"
+    Driver "intel"
+    BusID "PCI:00:02:0"
+EndSection
+
+
+Section "Device"
+    Identifier "Device1"
+    Driver "nouveau"
+    BusID "PCI:01:00:0"
+    Option "NoLogo" "true"
+    Option "UseEDID" "true"
+    Option "ConnectedMonitor" "DFP"
+EndSection
+
+Section "Monitor"
+   Identifier  "Monitor0"
+   HorizSync   30-94
+   VertRefresh 48-85
+EndSection
+
+Section "Monitor"
+   Identifier  "Monitor1"
+   HorizSync   30-94
+   VertRefresh 48-85
+EndSection
+
+Section "Screen"
+   Identifier  "Screen0"
+   Device      "Device0"
+   Monitor     "Monitor0"
+   DefaultDepth    24
+   SubSection "Display"
+       Depth       24
+       Modes       "1600x900"
+   EndSubSection
+EndSection
+
+Section "Screen"
+   Identifier  "Screen1"
+   Device      "Device1"
+   Monitor     "Monitor1"
+   DefaultDepth    24
+   SubSection "Display"
+       Depth       24
+       Modes       "1920x1080"
+   EndSubSection
+EndSection
+
+Section "ServerLayout"
+    Identifier  "Default Layout"
+    Screen  0   "Screen0" Absolute 0 180 
+    Screen  1   "Screen1" Absolute 1600 0
+EndSection
