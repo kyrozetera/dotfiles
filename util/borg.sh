@@ -5,7 +5,7 @@ REPOSITORY=/bak/borg
 
 # Backup all of /home and /var/www except a few
 # excluded directories
-sudo -E borg create -v --stats -p                         \
+sudo -E borg create -v --stats -p                 \
     --compression zlib,9                          \
     $REPOSITORY::"$(hostname)-$(date +%Y-%m-%d)"  \
     /home                                       \
