@@ -151,7 +151,7 @@ nnoremap <C-F> :Ack!<space>
 let g:ctrlp_max_files = ''
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '/var/www/hpa/public/js',
+  \ 'dir': '/var/www/hpa/public/js\|/var/www/KoddiETL/.*/target\|/var/www/KoddiETL/.*/project/project\|/var/www/KoddiETL/.*/project/target',
   \ }
 
 "  \ 'dir': '\v[\/](public/js)',
