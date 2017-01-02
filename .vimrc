@@ -79,8 +79,8 @@ augroup filetype_sbt
 augroup END
 
 "remove trailing whitespace on save
-autocmd BufWritePre *.php :call TripWhiteSpace()
-function! TripWhiteSpace()
+autocmd BufWritePre *.{php,scala,rs} :call StripWhiteSpace()
+function! StripWhiteSpace()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
