@@ -50,10 +50,11 @@ set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
+set mousemodel=popup
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
+  source /etc/vimrc
 endif
 
 set number
@@ -64,6 +65,8 @@ set shiftwidth=4
 set expandtab
 set nosmarttab
 set backspace=indent,eol,start
+
+colo default
 
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:UltiSnipsExpandTrigger="<C-e>"
