@@ -12,5 +12,8 @@ fi
 
 export SSH_ASKPASS=ssh-askpass
 
+xset +dpms
+xset dpms 0 0 300
+
 #exec gnome-session
 exec startxfce4
