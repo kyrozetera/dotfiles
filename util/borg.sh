@@ -15,6 +15,7 @@ sudo -E borg create -v --stats -p                 \
     --exclude /home/kyro/builds                 \
     --exclude /home/kyro/workspace              \
     --exclude /home/kyro/Downloads              \
+    --exclude /home/kyro/Dropbox                \
     --exclude /home/kyro/Pictures               \
     --exclude /home/kyro/eclipse-workspace      \
     --exclude /home/kyro/hpa_raw_loader         \
