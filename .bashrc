@@ -123,3 +123,6 @@ fi
 
 # path to spark binaries
 export PATH=$PATH:/usr/local/spark/bin
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
